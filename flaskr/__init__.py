@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
 
 from . import db
 from . import auth
@@ -23,7 +23,7 @@ def create_app(test_config=None):
 
     @app.route('/')
     def index():
-        return 'Hello, World!'
+        return render_template('home.html')
 
     
     db.init_app(app)
